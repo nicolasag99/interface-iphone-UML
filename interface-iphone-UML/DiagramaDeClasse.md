@@ -1,25 +1,22 @@
-# Diagrama de Classe 
+# Diagrama de Classe
 
 ```mermaid
 classDiagram
-    ReprodutorMusical <|-- IPod 
+    IPod *-- ReprodutorMusical   
     ReprodutorMusical : + tocar()
     ReprodutorMusical : + pausar()
     ReprodutorMusical : + selecionarMusica(String musica)
-
-    AparelhoTelefonico <|-- Phone
+    
+    Phone *-- AparelhoTelefonico
     AparelhoTelefonico : + ligar()
     AparelhoTelefonico : + atender()
     AparelhoTelefonico : + iniciarCorreioVoz()
 
-    NavegadorInternet <|-- Internet
+    Internet *-- NavegadorInternet
     NavegadorInternet : + exibirPagina()
-    NavegadorInternet : + adicionarNovaAba()
+    NavegadorInternet : + adicionarNovaPagina()
     NavegadorInternet : + atualizarPagina()
-
+    
     IPhone o-- ReprodutorMusical
     IPhone o-- AparelhoTelefonico
     IPhone o-- NavegadorInternet
-
-    class IPhone {
-    }
